@@ -1,0 +1,2 @@
+/usr/bin/ar cr /home/akash/Documents/programming/c++/_CSVReader/bin/libCSVReader.a  CMakeFiles/CSVReader.dir/home/akash/Documents/programming/c++/_CSVReader/src/_test.cpp.o CMakeFiles/CSVReader.dir/home/akash/Documents/programming/c++/_CSVReader/src/CSVStream.cpp.o CMakeFiles/CSVReader.dir/home/akash/Documents/programming/c++/_CSVReader/src/TokenStream.cpp.o
+/usr/bin/ranlib /home/akash/Documents/programming/c++/_CSVReader/bin/libCSVReader.a
