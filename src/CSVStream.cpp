@@ -9,11 +9,11 @@
 
 namespace CSVReader {
 
-	std::map<std::string, std::string> CSVStream::get() {
+	CSVStream::row_obj CSVStream::get() {
 
 		if (empty()) throw ParseError{"Input empty."};
 
-		std::map<std::string, std::string> row {};
+		row_obj row {};
 
 		for (auto i=headers.begin(), max = headers.end(); i < max; ++i) {
 			switch(ts->current().type) {
@@ -48,11 +48,11 @@ namespace CSVReader {
 
 	}
 
-	std::vector<std::string> CSVStream::getHeaders(TokenStream* ts) {
+	CSVStream::header_list CSVStream::getHeaders(TokenStream* ts) {
 
 		ts->get();
 
-		std::vector<std::string> headers {};
+		header_list headers {};
 		std::unordered_set<std::string> dupCheck {};
 
 		while (!ts->recordEnded()) {

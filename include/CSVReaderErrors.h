@@ -1,5 +1,5 @@
 /*
- * CSVReaderError.h
+ * BaseError.h
  *
  *  Created on: Aug 14, 2015
  *      Author: Akash
@@ -12,20 +12,20 @@
 
 namespace CSVReader {
 
-	struct CSVReaderError: std::invalid_argument {
-		CSVReaderError(std::string message="something failed"): std::invalid_argument("CSV Reader: "+message) {}
+	struct BaseError: std::invalid_argument {
+		BaseError(std::string message="something failed"): std::invalid_argument("CSV Reader: "+message) {}
 	};
 
-	struct ReadError: CSVReaderError {
-		ReadError(std::string message="bad input"): CSVReaderError("read failed - "+message) {}
+	struct ReadError: BaseError {
+		ReadError(std::string message="bad input"): BaseError("read failed - "+message) {}
 	};
 
 	struct IllegalCharError: ReadError {
 		IllegalCharError(char c): ReadError(std::string{"illegal char '"}+c+"'") {}
 	};
 
-	struct ParseError: CSVReaderError {
-		ParseError(std::string message="illegal token"): CSVReaderError("parse failed - "+message) {}
+	struct ParseError: BaseError {
+		ParseError(std::string message="illegal token"): BaseError("parse failed - "+message) {}
 	};
 
 	struct ItemMismatchError: ParseError {

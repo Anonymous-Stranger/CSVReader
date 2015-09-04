@@ -12,6 +12,7 @@
 
 #include <sstream>
 #include "CSVStream.h"
+#include "CSVReaderErrors.h"
 
 namespace CSVReader {
 
@@ -24,7 +25,7 @@ namespace CSVReader {
 		if ( !(interp << arg) 						// write arg to stream
 			|| !(interp >> result)					// read result from stream
 			|| !(interp >> std::ws).eof()) {		// stuff left in stream?
-			throw std::runtime_error{"to<>() failed"};
+			throw BaseError{"to<>() failed"};
 		}
 
 		return result;

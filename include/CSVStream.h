@@ -10,7 +10,7 @@
 
 #include <istream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <unordered_set>
 #include "TokenStream.h"
 #include "CSVReaderErrors.h"
@@ -20,11 +20,14 @@ namespace CSVReader {
 class CSVStream {
 
 public:
+	using header_list = std::vector<std::string>;
+	using row_obj = std::unordered_map<std::string, std::string>;
+
 	CSVStream(std::istream& in, char sep=d_sep): CSVStream(new TokenStream{in, sep}) {}
 	CSVStream(std::istream* in, char sep=d_sep): CSVStream(new TokenStream{in, sep}) {}
-	CSVStream(std::istream& in, std::vector<std::string> headers, char sep=d_sep):
+	CSVStream(std::istream& in, header_list headers, char sep=d_sep):
 		CSVStream(new TokenStream{in, sep}, headers) {}
-	CSVStream(std::istream* in, std::vector<std::string> headers, char sep=d_sep):
+	CSVStream(std::istream* in, header_list headers, char sep=d_sep):
 		CSVStream(new TokenStream{in, sep}, headers) {}
 
 	// CSVReader can't be copied.
@@ -33,9 +36,9 @@ public:
 
 	~CSVStream() { delete ts; };
 
-	std::map<std::string, std::string> get();
+	row_obj get();
 
-	const std::vector<std::string>& getHeaders() const { return headers; }
+	const header_list& getHeaders() const { return headers; }
 
 	bool empty() const { return ts->empty(); }
 
@@ -48,14 +51,14 @@ private:
 	constexpr static char d_sep {TokenStream::d_sep};
 
 	TokenStream* ts;
-	const std::vector<std::string> headers;
+	const header_list headers;
 
 	CSVStream(TokenStream* ts): CSVStream(ts, getHeaders(ts), false) {}
-	CSVStream(TokenStream* ts, std::vector<std::string> headers, bool get=true): ts{ts}, headers{headers} {
+	CSVStream(TokenStream* ts, header_list headers, bool get=true): ts{ts}, headers{headers} {
 		if (get) ts->get();
 	}
 
-	std::vector<std::string> getHeaders(TokenStream* ts);
+	header_list getHeaders(TokenStream* ts);
 
 	void nextSkipSeparator(TokenStream* ts) {
 		/* loads next token, skipping a separator if it's there

@@ -20,14 +20,10 @@ namespace CSVReaderTest {
 				auto record = in.get();
 
 				for (auto& item : record) {
-					std::cout << item.first << ":";
-					if (item.first == "cities") std::cout << item.second;
-					else std::cout << CSVReader::to<double>(item.second);
-					std::cout << "  ";
+					std::cout << item.first << ":" << item.second << "  ";
 				}
 
 				std::cout << std::endl;
-
 			}
 
 		} catch (std::exception& ex) {
