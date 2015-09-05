@@ -34,6 +34,9 @@ public:
 	CSVStream(const CSVStream&)=delete;
 	CSVStream& operator=(const CSVStream&)=delete;
 
+	CSVStream(CSVStream&&)=default;
+	CSVStream& operator=(CSVStream&&)=default;
+
 	~CSVStream() { delete ts; };
 
 	row_obj get();
@@ -41,10 +44,6 @@ public:
 	const header_list& getHeaders() const { return headers; }
 
 	bool empty() const { return ts->empty(); }
-
-protected:
-	CSVStream(CSVStream&&)=default;
-	CSVStream& operator=(CSVStream&&)=default;
 
 private:
 
