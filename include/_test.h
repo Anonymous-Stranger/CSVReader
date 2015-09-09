@@ -5,8 +5,8 @@
  *      Author: Akash
  */
 
-#ifndef TEST_H_
-#define TEST_H_
+#ifndef CSVREADER_TEST_H_
+#define CSVREADER_TEST_H_
 
 #include <iostream>
 #include <fstream>

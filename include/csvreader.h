@@ -7,12 +7,12 @@
  *      Author: Akash
  */
 
-#ifndef CSVREADER_H_
-#define CSVREADER_H_
+#ifndef CSVREADER_CSVREADER_H_
+#define CSVREADER_CSVREADER_H_
 
 #include <sstream>
 #include "CSVStream.h"
-#include "CSVReaderErrors.h"
+#include "Errors.h"
 
 namespace CSVReader {
 

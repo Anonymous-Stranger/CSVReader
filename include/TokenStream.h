@@ -5,15 +5,15 @@
  *      Author: Akash
  */
 
-#ifndef TOKENSTREAM_H_
-#define TOKENSTREAM_H_
+#ifndef CSVREADER_TOKENSTREAM_H_
+#define CSVREADER_TOKENSTREAM_H_
 
 #include <iostream>
 
 #include <istream>
 #include <sstream>
 #include "Token.h"
-#include "CSVReaderErrors.h"
+#include "Errors.h"
 
 namespace CSVReader {
 

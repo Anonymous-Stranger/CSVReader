@@ -5,8 +5,8 @@
  *      Author: Akash
  */
 
-#ifndef CSVREADERERRORS_H_
-#define CSVREADERERRORS_H_
+#ifndef CSVREADER_ERRORS_H_
+#define CSVREADER_ERRORS_H_
 
 #include <stdexcept>
 
@@ -42,4 +42,4 @@ namespace CSVReader {
 
 }
 
-#endif /* CSVREADERERROR_H_ */
+#endif /* ERRORS_H_ */

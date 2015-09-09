@@ -5,15 +5,15 @@
  *      Author: Akash
  */
 
-#ifndef CSVSTREAM_H_
-#define CSVSTREAM_H_
+#ifndef CSVREADER_CSVSTREAM_H_
+#define CSVREADER_CSVSTREAM_H_
 
 #include <istream>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 #include "TokenStream.h"
-#include "CSVReaderErrors.h"
+#include "Errors.h"
 
 namespace CSVReader {
 

@@ -5,8 +5,8 @@
  *      Author: Akash
  */
 
-#ifndef TOKEN_H_
-#define TOKEN_H_
+#ifndef CSVREADER_TOKEN_H_
+#define CSVREADER_TOKEN_H_
 
 #include <string>
 
