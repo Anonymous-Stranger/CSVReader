@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/CSVReaderErrors.h
-stdexcept
--
-
 ../include/CSVStream.h
 istream
 -
@@ -21,8 +17,12 @@ unordered_set
 -
 TokenStream.h
 ../include/TokenStream.h
-CSVReaderErrors.h
-../include/CSVReaderErrors.h
+Errors.h
+../include/Errors.h
+
+../include/Errors.h
+stdexcept
+-
 
 ../include/Token.h
 string
@@ -37,8 +37,8 @@ sstream
 -
 Token.h
 ../include/Token.h
-CSVReaderErrors.h
-../include/CSVReaderErrors.h
+Errors.h
+../include/Errors.h
 
 ../include/_test.h
 iostream
@@ -53,12 +53,16 @@ sstream
 -
 CSVStream.h
 ../include/CSVStream.h
-CSVReaderErrors.h
-../include/CSVReaderErrors.h
+Errors.h
+../include/Errors.h
 
 /home/akash/Documents/programming/c++/_CSVReader/src/CSVStream.cpp
 CSVStream.h
 /home/akash/Documents/programming/c++/_CSVReader/src/CSVStream.h
+
+/home/akash/Documents/programming/c++/_CSVReader/src/TokenStream.cpp
+TokenStream.h
+/home/akash/Documents/programming/c++/_CSVReader/src/TokenStream.h
 
 /home/akash/Documents/programming/c++/_CSVReader/src/_test.cpp
 _test.h
