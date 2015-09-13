@@ -1,6 +1,9 @@
 /*
  * Token.h
  *
+ * TokenStream parses character input into these Tokens,
+ * making it easier for them to be converted into associative arrays.
+ * 
  *  Created on: Aug 14, 2015
  *      Author: Akash
  */
@@ -12,7 +15,7 @@
 
 namespace CSVReader {
 
-enum class TokenType {sep, str, ln, end};
+enum class TokenType {sep, str, ln, end}; // separator, string, newline, eof
 
 struct Token {
 	TokenType type;

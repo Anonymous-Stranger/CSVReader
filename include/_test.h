@@ -1,6 +1,8 @@
 /*
  * _test.h
  *
+ * Tests to make sure the CSVReader is working.
+ *
  *  Created on: Aug 15, 2015
  *      Author: Akash
  */

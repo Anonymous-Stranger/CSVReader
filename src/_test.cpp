@@ -1,6 +1,8 @@
 /*
  * _main.cpp
  *
+ * A test to see if CSVStream is working. Should work with any proper csv file with first row headers.
+ * 
  *  Created on: Aug 14, 2015
  *      Author: Akash
  */
@@ -11,26 +13,22 @@ namespace CSVReaderTest {
 
 	void run(std::string testFile) {
 
-		try {
+		CSVReader::CSVStream in {new std::ifstream(testFile)}; // load the file
 
-			CSVReader::CSVStream in {new std::ifstream(testFile)};
+		while (!in.empty()) { // loop through file
 
-			while (!in.empty()) {
+			// fetch a record and print it:
 
-				auto record = in.get();
+			auto record = in.get();
 
-				for (auto& item : record) {
-					std::cout << item.first << ":" << item.second << "  ";
-				}
-
-				std::cout << std::endl;
+			for (auto& item : record) {
+				std::cout << item.first << ":" << item.second << "  ";
 			}
 
-		} catch (std::exception& ex) {
-			std::cerr << ex.what() << std::endl;
-		} catch (...) {
-			std::cerr << "Something failed." << std::endl;
+			std::cout << std::endl;
 		}
+
+		std::cout << "File read." << std::endl;
 
 	}
 

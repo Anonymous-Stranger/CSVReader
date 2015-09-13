@@ -1,5 +1,7 @@
 /*
- * BaseError.h
+ * Errors.h
+ *
+ * A collection of errors used by CSVReader
  *
  *  Created on: Aug 14, 2015
  *      Author: Akash

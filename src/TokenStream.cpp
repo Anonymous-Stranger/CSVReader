@@ -1,6 +1,9 @@
 /*
  * TokenStream.cpp
  *
+ * Converts a character input stream into a stream of Token objects.
+ * This makes it easier to parse from CSV to associative arrays.
+ *
  *  Created on: Aug 14, 2015
  *      Author: Akash
  */
