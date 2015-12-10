@@ -33,7 +33,7 @@ namespace CSVReader {
 
 			case TokenType::ln:
 			case TokenType::end:
-				if (i + 1 == max) row[*i] == ""; // either the last header is an empty string
+				if (i + 1 == max) row[*i] = ""; // either the last header is an empty string
 				else throw TooFewItemsError{}; // or error: too few items
 				break;
 

@@ -12,7 +12,7 @@ int main() try {
 	CSVReaderTest::run("test_bad.csv");
 
 } catch (std::exception& ex) {
-	std::cerr << std::cerr << ex.what() << std::endl;
+	std::cerr << std::endl << ex.what() << std::endl;
 } catch (...) {
-	std::cerr << "CSVReader Test: Something failed.";
+	std::cerr << std::endl << "CSVReader Test: Something failed." << std::endl;
 }
